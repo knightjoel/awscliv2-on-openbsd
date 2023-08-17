@@ -3,3 +3,48 @@
 This repo contains code which will allow you to build and install the
 [AWS CLIv2](https://aws.amazon.com/cli/) on OpenBSD using the OpenBSD
 [ports system](https://www.openbsd.org/faq/ports/ports.html).
+
+For more information, read the blog post
+[AWS CLIv2 on OpenBSD](https://www.packetmischief.ca/2023/08/16/awscliv2-on-openbsd/).
+
+## Installation
+
+To install the AWS CLIv2 port:
+
+1 - Clone the repository from GitHub:
+
+```text
+git clone https://github.com/knightjoel/awscliv2-on-openbsd
+```
+
+2 - Copy the contents of the repo's `ports/` directory to `/usr/ports` (or
+wherever your ports tree is).
+
+```text
+cd awscliv2-on-openbsd/ports
+cp -a * /usr/ports
+```
+
+3 - Install some packages needed to build the port. You could allow ports to build and
+install this software, but installing the packages will reduce the build time.
+
+```text
+doas pkg_add cmake python%3 ninja
+```
+
+4 - Install the AWS CLIv2 port.
+
+If you have v1 of the AWS CLI installed, you'll have to uninstall it first.
+
+```text
+doas pkg_delete awscli
+cd /usr/ports/sysutils/awscliv2
+make install
+```
+
+5 - Verify installation
+
+```text
+% aws --version
+aws-cli/2.13.9 Python/3.10.11 OpenBSD/7.3 source/amd64 prompt/off
+```
