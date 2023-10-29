@@ -7,6 +7,9 @@ This repo contains code which will allow you to build and install the
 For more information, read the blog post
 [AWS CLIv2 on OpenBSD](https://www.packetmischief.ca/2023/08/16/awscliv2-on-openbsd/).
 
+The ports in this repo are supported on OpenBSD 7.4 on the amd64 and arm64
+architectures.
+
 ## Installation
 
 To install the AWS CLIv2 port:
