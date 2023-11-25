@@ -21,7 +21,7 @@ jobs:
       - name: Build
         uses: cross-platform-actions/action@v0.21.1
         env:
-          PORTSDIR: /home/vagrant/ports
+          PORTSDIR: /home/runner/ports
         with:
           operating_system: openbsd
           architecture: x86-64
@@ -31,10 +31,22 @@ jobs:
           sync_files: runner-to-vm
           run: |
             pwd
+            # /Users/runner/work/awscliv2-on-openbsd/awscliv2-on-openbsd
             ls -l
-            pkg_add -Ix ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
+            sudo pkg_add -Ix ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             cd ~
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
+            mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/sysutils/awscliv2 ~/ports/sysutils
+            mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/devel/py-awscrt ~/ports/devel
+            cd ~/ports/sysutils/awscliv2
+            make makesum
+            make update-plist
+            make package
+            cd ~/ports/devel/py-awscrt
+            make makesum
+            make update-plist
+            make package
+
       # - name: Check for modified files
       #   id: git-check
       #   run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
