@@ -20,7 +20,7 @@ jobs:
       - name: Build
         uses: cross-platform-actions/action@v0.21.1
         env:
-          PORTSDIR: /Users/runner/ports
+          PORTSDIR: /home/runner/ports
         with:
           operating_system: openbsd
           architecture: x86-64
@@ -32,16 +32,15 @@ jobs:
             pwd
             # /Users/runner/work/awscliv2-on-openbsd/awscliv2-on-openbsd
             ls -l
-            finger runner
             env
-            cd ~
-            pwd
             # sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
-            # cd ~
-            # ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
+            cd ~
+            ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
             # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/sysutils/awscliv2 ~/ports/sysutils
             # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/devel/py-awscrt ~/ports/devel
-            # sudo sh -c 'echo SUDO=sudo >> /etc/mk.conf'
+            sudo sh -c 'echo SUDO=sudo >> /etc/mk.conf'
+            cd ~/ports/sysutils/sysclean
+            make install
             # cd ~/ports/devel/py-awscrt
             # #make makesum
             # #make update-plist
