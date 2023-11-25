@@ -41,11 +41,11 @@ jobs:
             cd ~/ports/sysutils/awscliv2
             make makesum
             make update-plist
-            make package
+            make install
             cd ~/ports/devel/py-awscrt
             make makesum
             make update-plist
-            make package
+            make install
 
       # - name: Check for modified files
       #   id: git-check
