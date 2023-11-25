@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  branches-ignore:
+    - main
+
+env:
+  OBSD_MIRROR: https://cdn.openbsd.org/pub/OpenBSD/7.4
+  OBSD_VERSION: "7.4"
+  PKG_DEPS_GENERAL: cmake llvm ninja python%3
+  PKG_DEPS_CLI: |
+    py-colorama py-docutils py-cryptography py-ruamel.yaml py-ruamel.yaml.clib
+    py-prompt_toolkit py-distro py-dateutil py-jmespath py-urllib3
+
+jobs:
+  build:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        uses: cross-platform-actions/action@v0.21.1
+        env:
+          PORTSDIR: /home/vagrant/ports
+        with:
+          operating_system: openbsd
+          architecture: x86-64
+          version: "${{ env.OBSD_VERSION }}"
+          environment_variables:
+            - PORTSDIR
+          shell: bash
+          sync_files: runner-to-vm
+          run: |
+            pwd
+            ls -l
+            pkg_add -Ix ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
+            cd ~
+            ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
+      # - name: Check for modified files
+      #   id: git-check
+      #   run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+      #
+      # - name: Push changes back to branch
+      #   if: steps.git-check.outputs.modified == 'true'
+      #   run:  |
+      #     git config --global user.name 'Your Name'
+      #     git config --global user.email 'Your Email for GitHub'
+      #     git add -A
+      #     git commit -m '[automated commit] add configs generated using jsonnet & GitHub workflow'
+      #     git push
