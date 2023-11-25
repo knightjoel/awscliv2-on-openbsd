@@ -26,8 +26,7 @@ jobs:
           operating_system: openbsd
           architecture: x86-64
           version: "${{ env.OBSD_VERSION }}"
-          environment_variables:
-            - PORTSDIR
+          environment_variables: PORTSDIR
           shell: bash
           sync_files: runner-to-vm
           run: |
