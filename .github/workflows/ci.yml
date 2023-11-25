@@ -21,11 +21,12 @@ jobs:
         uses: cross-platform-actions/action@v0.21.1
         env:
           PORTSDIR: /home/runner/ports
+          TRUSTED_PKG_PATH: /home/runner/ports/packages/amd64/
         with:
           operating_system: openbsd
           architecture: x86-64
           version: "${{ env.OBSD_VERSION }}"
-          environment_variables: PORTSDIR
+          environment_variables: PORTSDIR TRUSTED_PKG_PATH
           shell: bash
           sync_files: runner-to-vm
           run: |
@@ -35,6 +36,7 @@ jobs:
             env
             # sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             cd ~
+            echo Extracting ports.tar.gz ...
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
             # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/sysutils/awscliv2 ~/ports/sysutils
             # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/devel/py-awscrt ~/ports/devel
