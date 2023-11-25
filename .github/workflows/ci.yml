@@ -38,11 +38,11 @@ jobs:
             mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/sysutils/awscliv2 ~/ports/sysutils
             mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/devel/py-awscrt ~/ports/devel
             sudo sh -c 'echo SUDO=sudo >> /etc/mk.conf'
-            cd ~/ports/sysutils/awscliv2
+            cd ~/ports/devel/py-awscrt
             make makesum
             make update-plist
             make install
-            cd ~/ports/devel/py-awscrt
+            cd ~/ports/sysutils/awscliv2
             make makesum
             make update-plist
             make install
