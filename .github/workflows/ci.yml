@@ -8,10 +8,9 @@ on:
 env:
   OBSD_MIRROR: https://cdn.openbsd.org/pub/OpenBSD/7.4
   OBSD_VERSION: "7.4"
-  PKG_DEPS_GENERAL: cmake ninja python
+  PKG_DEPS_GENERAL: cmake ninja python%3.10
   PKG_DEPS_CLI: |
-    py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib
-    py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
+    py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
 
 jobs:
   build:
