@@ -21,7 +21,7 @@ jobs:
         uses: cross-platform-actions/action@v0.21.1
         env:
           PORTSDIR: /home/runner/ports
-          TRUSTED_PKG_PATH: /home/runner/ports/packages/amd64/
+          TRUSTED_PKG_PATH: /home/runner/ports/packages/amd64/all/
         with:
           operating_system: openbsd
           architecture: x86-64
