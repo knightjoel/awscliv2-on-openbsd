@@ -10,7 +10,7 @@ env:
   OBSD_VERSION: "7.4"
   PKG_DEPS_GENERAL: cmake ninja python%3.10
   PKG_DEPS_CLI: |
-    py3-installer py3-flit_core py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
+    py3-installer py3-flit_core py3-wheel py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
             pwd
             # /Users/runner/work/awscliv2-on-openbsd/awscliv2-on-openbsd
             ls -l
-            sudo pkg_add -Ix ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
+            sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             cd ~
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
             mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/sysutils/awscliv2 ~/ports/sysutils
