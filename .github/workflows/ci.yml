@@ -2,8 +2,8 @@ name: CI
 
 on:
   push:
-  branches-ignore:
-    - main
+    branches-ignore:
+      - main
 
 env:
   OBSD_MIRROR: https://cdn.openbsd.org/pub/OpenBSD/7.4
