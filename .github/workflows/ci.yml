@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+env:
+  OBSD_MIRROR: https://cdn.openbsd.org
+  PKG_DEPS_GENERAL: cmake ninja python%3.10
+  PKG_DEPS_CLI: |
+    py3-build py3-installer py3-flit_core py3-wheel py3-setuptools py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
+
+jobs:
+  build-and-sync:
+    strategy:
+      matrix:
+        os:
+          - name: 7.4-amd64
+            arch: x86-64
+            version: "7.4"
+            host: macos-12
+            do-git-push: true  # Push changes from this build back to the branch
+          - name: 7.4-arm64
+            arch: arm64
+            version: "7.4"
+            host: ubuntu-latest
+    name: Build and sync on ${{ matrix.os.name }}
+    runs-on: ${{ matrix.os.host }}
+    timeout-minutes: 180
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        uses: cross-platform-actions/action@v0.21.1
+        with:
+          operating_system: openbsd
+          architecture: ${{ matrix.os.arch }}
+          version: "${{ matrix.os.version }}"
+          shell: bash
+          run: |
+            sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
+            echo Extracting ports.tar.gz ...
+            # Extract ports outside the 'work' directory so that it does not get
+            # sync'd back to the runner at the end of this job.
+            ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.os.version }}/ports.tar.gz | tar zxphf - -C $HOME
+            export PORTSDIR=$HOME/ports
+            mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
+            mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
+            sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
+            cd $PORTSDIR/devel/py-awscrt
+            make makesum
+            make update-plist
+            make install
+            cd $PORTSDIR/sysutils/awscliv2
+            make makesum
+            make update-plist
+            make install
+            pkg_info | tee $GITHUB_WORKSPACE/pkg_info.txt
+            aws --version | tee $GITHUB_WORKSPACE/aws-version.txt
+            # Move files back inside the 'work' directory that we want to sync
+            # back to the runner.
+            mv $PORTSDIR/sysutils/awscliv2 $GITHUB_WORKSPACE/ports/sysutils
+            mv $PORTSDIR/devel/py-awscrt $GITHUB_WORKSPACE/ports/devel
+            mkdir $GITHUB_WORKSPACE/pkg
+            mv $PORTSDIR/packages/**/all/awscli* $GITHUB_WORKSPACE/pkg/
+            mv $PORTSDIR/packages/**/all/py3-awscrt* $GITHUB_WORKSPACE/pkg/
+
+      - name: Show validations
+        run: |
+          cat aws-version.txt
+          cat pkg_info.txt
+
+      - name: Upload packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages-${{ matrix.os.name }}
+          path: pkg/
+          retention-days: 14
+
+      - name: Upload validations
+        uses: actions/upload-artifact@v3
+        with:
+          name: validations-${{ matrix.os.name }}
+          path: |
+            aws-version.txt
+            pkg_info.txt
+          retention-days: 14
+
+      - name: Check for modified files
+        id: git-check
+        run: |
+          git status --porcelain
+          echo "modified=$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)" >> $GITHUB_OUTPUT
+
+      - name: Push changes back to the branch
+        # It's important changes are only pushed back to the branch once within
+        # all the runs of the matrix, otherwise they will try to push on top of
+        # each other and error out.
+        if: steps.git-check.outputs.modified == 'true' && matrix.os.do-git-push
+        run:  |
+          git config --global user.name 'Joel[bot]'
+          git config --global user.email '17298529+knightjoel@users.noreply.github.com'
+          git commit -a -m 'Sync'
+          git push
