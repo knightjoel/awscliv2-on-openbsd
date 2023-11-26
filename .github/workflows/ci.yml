@@ -38,7 +38,8 @@ jobs:
             sudo sh -c 'echo SUDO=sudo >> /etc/mk.conf'
             export PORTSDIR=`pwd`/ports
             cd ports/sysutils/sysclean
-            make install
+            make package
+            make -dl install
             # cd ~/ports/devel/py-awscrt
             # #make makesum
             # #make update-plist
