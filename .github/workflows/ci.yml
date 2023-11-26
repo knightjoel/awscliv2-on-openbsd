@@ -16,16 +16,16 @@ jobs:
     strategy:
       matrix:
         os:
-          - name: OpenBSD/amd64 7.4
+          - name: 7.4/amd64
             arch: x86-64
             version: "7.4"
             host: macos-12
-          - name: OpenBSD/arm64 7.4
+          - name: 7.4/arm64
             arch: arm64
             version: "7.4"
             host: ubuntu-latest
     runs-on: ${{ matrix.os.host }}
-    timeout-minutes: 60
+    timeout-minutes: 180
     permissions:
       contents: write
     steps:
