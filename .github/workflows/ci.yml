@@ -15,12 +15,16 @@ jobs:
   build-and-sync:
     strategy:
       matrix:
-        obsd_version:
-          - "7.4"
-        arch:
-          - arm64
-          - x86-64
-    runs-on: macos-12
+        os:
+          - name: OpenBSD/amd64 7.4
+            arch: x86-64
+            version: "7.4"
+            host: macos-12
+          - name: OpenBSD/arm64 7.4
+            arch: arm64
+            version: "7.4"
+            host: ubuntu-latest
+    runs-on: ${{ matrix.os.host }}
     timeout-minutes: 60
     permissions:
       contents: write
@@ -31,14 +35,14 @@ jobs:
         with:
           operating_system: openbsd
           architecture: ${{ matrix.arch }}
-          version: "${{ matrix.obsd_version }}"
+          version: "${{ matrix.version }}"
           shell: bash
           run: |
             sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             echo Extracting ports.tar.gz ...
             # Extract ports outside the 'work' directory so that it does not get
             # sync'd back to the runner at the end of this job.
-            ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.obsd_version }}/ports.tar.gz | tar zxphf - -C $HOME
+            ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.version }}/ports.tar.gz | tar zxphf - -C $HOME
             export PORTSDIR=$HOME/ports
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
