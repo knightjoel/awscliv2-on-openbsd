@@ -6,14 +6,20 @@ on:
       - main
 
 env:
-  OBSD_MIRROR: https://cdn.openbsd.org/pub/OpenBSD/7.4
-  OBSD_VERSION: "7.4"
+  OBSD_MIRROR: https://cdn.openbsd.org
   PKG_DEPS_GENERAL: cmake ninja python%3.10
   PKG_DEPS_CLI: |
     py3-build py3-installer py3-flit_core py3-wheel py3-setuptools py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
 
 jobs:
   build-and-sync:
+    strategy:
+      matrix:
+        obsd_version:
+          - "7.4"
+        arch:
+          - arm64
+          - x86-64
     runs-on: macos-12
     timeout-minutes: 60
     permissions:
@@ -24,15 +30,15 @@ jobs:
         uses: cross-platform-actions/action@v0.21.1
         with:
           operating_system: openbsd
-          architecture: x86-64
-          version: "${{ env.OBSD_VERSION }}"
+          architecture: ${{ matrix.arch }}
+          version: "${{ matrix.obsd_version }}"
           shell: bash
           run: |
             sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             echo Extracting ports.tar.gz ...
             # Extract ports outside the 'work' directory so that it does not get
             # sync'd back to the runner at the end of this job.
-            ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf - -C $HOME
+            ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.obsd_version }}/ports.tar.gz | tar zxphf - -C $HOME
             export PORTSDIR=$HOME/ports
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
@@ -52,7 +58,8 @@ jobs:
             mv $PORTSDIR/sysutils/awscliv2 $GITHUB_WORKSPACE/ports/sysutils
             mv $PORTSDIR/devel/py-awscrt $GITHUB_WORKSPACE/ports/devel
             mkdir $GITHUB_WORKSPACE/pkg
-            mv $PORTSDIR/packages/amd64/all/* $GITHUB_WORKSPACE/pkg/
+            mv $PORTSDIR/packages/**/all/awscli* $GITHUB_WORKSPACE/pkg/
+            mv $PORTSDIR/packages/**/all/py3-awscrt* $GITHUB_WORKSPACE/pkg/
 
       - name: Show validations
         run: |
