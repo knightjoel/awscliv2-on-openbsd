@@ -13,9 +13,11 @@ env:
     py3-build py3-installer py3-flit_core py3-wheel py3-setuptools py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
 
 jobs:
-  build:
+  build-and-sync:
     runs-on: macos-12
     timeout-minutes: 60
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - name: Build
@@ -59,8 +61,6 @@ jobs:
 
       - name: Push changes back to branch
         if: steps.git-check.outputs.modified == 'true'
-        permissions:
-          contents: write
         run:  |
           git config --global user.name 'Joel[bot]'
           git config --global user.email '17298529+knightjoel@users.noreply.github.com'
