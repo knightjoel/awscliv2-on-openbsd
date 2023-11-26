@@ -35,7 +35,7 @@ jobs:
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
             # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/sysutils/awscliv2 ~/ports/sysutils
             # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/devel/py-awscrt ~/ports/devel
-            sudo sh -c 'echo SUDO=sudo >> /etc/mk.conf'
+            sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
             export PORTSDIR=`pwd`/ports
             cd ports/sysutils/sysclean
             make package
