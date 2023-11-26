@@ -28,7 +28,6 @@ jobs:
           version: "${{ env.OBSD_VERSION }}"
           shell: bash
           run: |
-            env
             sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             echo Extracting ports.tar.gz ...
             # Extract ports outside the 'work' directory so that it does not get
@@ -54,6 +53,11 @@ jobs:
             mv $PORTSDIR/devel/py-awscrt $GITHUB_WORKSPACE/ports/devel
             mkdir $GITHUB_WORKSPACE/pkg
             mv $PORTSDIR/packages/amd64/all/* $GITHUB_WORKSPACE/pkg/
+
+      - name: Show validations
+        run: |
+          cat aws-version.txt
+          cat pkg_info.txt
 
       - name: Upload packages
         uses: actions/upload-artifact@v3
