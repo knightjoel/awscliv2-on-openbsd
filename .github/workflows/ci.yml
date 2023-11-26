@@ -59,6 +59,8 @@ jobs:
 
       - name: Push changes back to branch
         if: steps.git-check.outputs.modified == 'true'
+        permissions:
+          contents: write
         run:  |
           git config --global user.name 'Joel[bot]'
           git config --global user.email '17298529+knightjoel@users.noreply.github.com'
