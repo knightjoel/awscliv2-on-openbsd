@@ -26,28 +26,20 @@ jobs:
           shell: bash
           sync_files: runner-to-vm
           run: |
-            pwd
-            # /Users/runner/work/awscliv2-on-openbsd/awscliv2-on-openbsd
-            ls -l
             env
-            # sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
+            sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             echo Extracting ports.tar.gz ...
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/ports.tar.gz | tar zxphf -
-            # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/sysutils/awscliv2 ~/ports/sysutils
-            # mv ~/work/awscliv2-on-openbsd/awscliv2-on-openbsd/ports/devel/py-awscrt ~/ports/devel
             sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
             export PORTSDIR=`pwd`/ports
-            cd ports/sysutils/sysclean
-            make package
-            make -dl install
-            # cd ~/ports/devel/py-awscrt
-            # #make makesum
-            # #make update-plist
-            # make install
-            # cd ~/ports/sysutils/awscliv2
-            # #make makesum
-            # #make update-plist
-            # make install
+            cd $PORTSDIR/devel/py-awscrt
+            make makesum
+            make update-plist
+            make install
+            cd $PORTSDIR/sysutils/awscliv2
+            make makesum
+            make update-plist
+            make install
 
       # - name: Check for modified files
       #   id: git-check
