@@ -52,6 +52,24 @@ jobs:
             # back to the runner.
             mv $PORTSDIR/sysutils/awscliv2 $GITHUB_WORKSPACE/ports/sysutils
             mv $PORTSDIR/devel/py-awscrt $GITHUB_WORKSPACE/ports/devel
+            mkdir $GITHUB_WORKSPACE/pkg
+            mv $PORTSDIR/packages/amd64/all/* $GITHUB_WORKSPACE/pkg/
+
+      - name: Upload packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: packages
+          path: pkg/
+          retention-days: 14
+
+      - name: Upload validations
+        uses: actions/upload-artifact@v3
+        with:
+          name: validations
+          path: |
+            aws-version.txt
+            pkg_info.txt
+          retention-days: 14
 
       - name: Check for modified files
         id: git-check
