@@ -561,6 +561,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudformation/201
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudformation/2010-05-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudformation/2010-05-15/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront-keyvaluestore/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront-keyvaluestore/2022-07-26/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront-keyvaluestore/2022-07-26/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront-keyvaluestore/2022-07-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront-keyvaluestore/2022-07-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront/2020-05-31/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront/2020-05-31/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/cloudfront/2020-05-31/paginators-1.json
@@ -1089,6 +1094,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/importexport/2010-
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/importexport/2010-06-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/importexport/2010-06-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector-scan/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector-scan/2023-08-08/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector-scan/2023-08-08/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector-scan/2023-08-08/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector-scan/2023-08-08/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector/2016-02-16/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector/2016-02-16/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/inspector/2016-02-16/paginators-1.json
@@ -1175,6 +1185,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotsitewise/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotsitewise/2019-12-02/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotsitewise/2019-12-02/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotsitewise/2019-12-02/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotsitewise/2019-12-02/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotsitewise/2019-12-02/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotsitewise/2019-12-02/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/iotthingsgraph/
@@ -1374,11 +1385,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/machinelearning/20
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/machinelearning/2014-12-12/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/machinelearning/2014-12-12/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/machinelearning/2014-12-12/waiters-2.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie/
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie/2017-12-19/
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie/2017-12-19/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie/2017-12-19/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie/2017-12-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie2/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie2/2020-01-01/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/macie2/2020-01-01/endpoint-rule-set-1.json
@@ -2099,6 +2105,11 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/translate/2017-07-
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/translate/2017-07-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/translate/2017-07-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/translate/2017-07-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/trustedadvisor/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/trustedadvisor/2022-09-15/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/trustedadvisor/2022-09-15/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/trustedadvisor/2022-09-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/trustedadvisor/2022-09-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/verifiedpermissions/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/verifiedpermissions/2021-12-01/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/verifiedpermissions/2021-12-01/endpoint-rule-set-1.json
@@ -3345,9 +3356,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/data/logs/2014-03-28/completions
 lib/python${MODPY_VERSION}/site-packages/awscli/data/machinelearning/
 lib/python${MODPY_VERSION}/site-packages/awscli/data/machinelearning/2014-12-12/
 lib/python${MODPY_VERSION}/site-packages/awscli/data/machinelearning/2014-12-12/completions-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/data/macie/
-lib/python${MODPY_VERSION}/site-packages/awscli/data/macie/2017-12-19/
-lib/python${MODPY_VERSION}/site-packages/awscli/data/macie/2017-12-19/completions-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/data/marketplace-entitlement/
 lib/python${MODPY_VERSION}/site-packages/awscli/data/marketplace-entitlement/2017-01-11/
 lib/python${MODPY_VERSION}/site-packages/awscli/data/marketplace-entitlement/2017-01-11/completions-1.json
