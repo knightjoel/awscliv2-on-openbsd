@@ -16,15 +16,16 @@ jobs:
     strategy:
       matrix:
         os:
-          - name: 7.4/amd64
+          - name: 7.4-amd64
             arch: x86-64
             version: "7.4"
             host: macos-12
             do-git-push: true  # Push changes from this build back to the branch
-          - name: 7.4/arm64
+          - name: 7.4-arm64
             arch: arm64
             version: "7.4"
             host: ubuntu-latest
+    name: Build and sync on ${{ matrix.os.name }}
     runs-on: ${{ matrix.os.host }}
     timeout-minutes: 180
     permissions:
@@ -74,14 +75,14 @@ jobs:
       - name: Upload packages
         uses: actions/upload-artifact@v3
         with:
-          name: packages ${{ matrix.os.name }}
+          name: packages-${{ matrix.os.name }}
           path: pkg/
           retention-days: 14
 
       - name: Upload validations
         uses: actions/upload-artifact@v3
         with:
-          name: validations ${{ matrix.os.name }}
+          name: validations-${{ matrix.os.name }}
           path: |
             aws-version.txt
             pkg_info.txt
