@@ -20,6 +20,7 @@ jobs:
             arch: x86-64
             version: "7.4"
             host: macos-12
+            do-git-push: true  # Push changes from this build back to the branch
           - name: 7.4/arm64
             arch: arm64
             version: "7.4"
@@ -92,8 +93,11 @@ jobs:
           git status --porcelain
           echo "modified=$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)" >> $GITHUB_OUTPUT
 
-      - name: Push changes back to branch
-        if: steps.git-check.outputs.modified == 'true'
+      - name: Push changes back to the branch
+        # It's important changes are only pushed back to the branch once within
+        # all the runs of the matrix, otherwise they will try to push on top of
+        # each other and error out.
+        if: steps.git-check.outputs.modified == 'true' && matrix.os.do-git-push
         run:  |
           git config --global user.name 'Joel[bot]'
           git config --global user.email '17298529+knightjoel@users.noreply.github.com'
