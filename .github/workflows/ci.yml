@@ -74,14 +74,14 @@ jobs:
       - name: Upload packages
         uses: actions/upload-artifact@v3
         with:
-          name: packages
+          name: packages ${{ matrix.os.name }}
           path: pkg/
           retention-days: 14
 
       - name: Upload validations
         uses: actions/upload-artifact@v3
         with:
-          name: validations
+          name: validations ${{ matrix.os.name }}
           path: |
             aws-version.txt
             pkg_info.txt
