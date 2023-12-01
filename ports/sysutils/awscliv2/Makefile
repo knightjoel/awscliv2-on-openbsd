@@ -19,7 +19,7 @@ MODULES =		lang/python
 
 MODPY_PYBUILD =		flit_core
 
-RUN_DEPENDS +=		devel/py-awscrt==0.19.18
+RUN_DEPENDS +=		devel/py-awscrt=0.19.18
 # !!! check pyproject.toml for exact dependency versions
 RUN_DEPENDS +=		devel/py-colorama${MODPY_FLAVOR}
 RUN_DEPENDS +=		textproc/py-docutils${MODPY_FLAVOR}
