@@ -4,6 +4,8 @@ on:
   push:
     branches-ignore:
       - main
+    paths:
+      - 'ports/**'
 
 env:
   OBSD_MIRROR: https://cdn.openbsd.org
