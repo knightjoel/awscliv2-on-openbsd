@@ -102,7 +102,7 @@ jobs:
         # each other and error out.
         if: steps.git-check.outputs.modified == 'true' && matrix.os.do-git-push
         run:  |
-          git config --global user.name 'Joel[bot]'
-          git config --global user.email '17298529+knightjoel@users.noreply.github.com'
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
           git commit -a -m 'Sync'
           git push
