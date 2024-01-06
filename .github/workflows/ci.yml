@@ -8,6 +8,7 @@ on:
       - 'ports/**'
 
 env:
+  ARTIFACT_RETENTION_DAYS: 45
   OBSD_MIRROR: https://cdn.openbsd.org
   PKG_DEPS_GENERAL: cmake ninja python%3.10
   PKG_DEPS_CLI: |
@@ -79,7 +80,7 @@ jobs:
         with:
           name: packages-${{ matrix.os.name }}
           path: pkg/
-          retention-days: 14
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Upload validations
         uses: actions/upload-artifact@v3
@@ -88,7 +89,7 @@ jobs:
           path: |
             aws-version.txt
             pkg_info.txt
-          retention-days: 14
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Check for modified files
         id: git-check
