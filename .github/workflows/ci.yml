@@ -42,6 +42,7 @@ jobs:
           architecture: ${{ matrix.os.arch }}
           version: "${{ matrix.os.version }}"
           shell: bash
+          shutdown_vm: false
           run: |
             sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             echo Extracting ports.tar.gz ...
