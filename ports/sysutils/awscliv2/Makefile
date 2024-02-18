@@ -1,6 +1,6 @@
 COMMENT =		universal command line environment v2 for AWS
 
-MODPY_EGG_VERSION =	2.15.19
+MODPY_EGG_VERSION =	2.15.21
 PKGNAME =		awscli-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =		aws
