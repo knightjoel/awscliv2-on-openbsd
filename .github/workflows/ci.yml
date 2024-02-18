@@ -22,7 +22,7 @@ jobs:
           - name: 7.4-amd64
             arch: x86-64
             version: "7.4"
-            host: macos-12
+            host: ubuntu-latest
             do-git-push: true  # Push changes from this build back to the branch
           - name: 7.4-arm64
             arch: arm64
@@ -36,11 +36,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build
-        uses: cross-platform-actions/action@v0.22.0
+        uses: cross-platform-actions/action@v0.23.0
         with:
           operating_system: openbsd
           architecture: ${{ matrix.os.arch }}
           version: "${{ matrix.os.version }}"
+          cpu_count: 4
           shell: bash
           shutdown_vm: false
           run: |
