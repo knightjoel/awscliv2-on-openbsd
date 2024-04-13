@@ -19,6 +19,14 @@ jobs:
     strategy:
       matrix:
         os:
+          - name: 7.5-amd64
+            arch: x86-64
+            version: "7.5"
+            host: ubuntu-latest
+          - name: 7.5-arm64
+            arch: arm64
+            version: "7.5"
+            host: ubuntu-latest
           - name: 7.4-amd64
             arch: x86-64
             version: "7.4"
@@ -36,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build
-        uses: cross-platform-actions/action@v0.23.0
+        uses: cross-platform-actions/action@v0.24.0
         with:
           operating_system: openbsd
           architecture: ${{ matrix.os.arch }}
