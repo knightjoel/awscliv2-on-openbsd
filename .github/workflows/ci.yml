@@ -87,14 +87,14 @@ jobs:
           cat pkg_info.txt
 
       - name: Upload packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: packages-${{ matrix.os.name }}
           path: pkg/
           retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
 
       - name: Upload validations
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: validations-${{ matrix.os.name }}
           path: |
