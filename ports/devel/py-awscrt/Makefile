@@ -25,6 +25,10 @@ FLAVOR =		python3
 
 BUILD_DEPENDS +=	devel/cmake
 
+# aws-lc <https://github.com/aws/aws-lc>, which is vendored into the
+# Python CRT bindings, isn't compatible with exec-only.
+USE_NOEXECONLY =	Yes
+
 NO_TEST =		Yes
 
 # pass in CONFIGURE_ARGS defined by the cmake module
