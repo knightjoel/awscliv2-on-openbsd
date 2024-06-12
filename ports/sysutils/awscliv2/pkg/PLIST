@@ -399,6 +399,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-insigh
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-insights/2018-11-25/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-insights/2018-11-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-insights/2018-11-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-signals/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-signals/2024-04-15/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-signals/2024-04-15/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-signals/2024-04-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-signals/2024-04-15/paginators-1.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/application-signals/2024-04-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/applicationcostprofiler/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/applicationcostprofiler/2020-09-10/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/applicationcostprofiler/2020-09-10/endpoint-rule-set-1.json
@@ -1824,6 +1830,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-ad/2
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-ad/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-ad/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-ad/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-scep/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-scep/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-scep/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-scep/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-scep/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/pca-connector-scep/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/personalize/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/personalize-events/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/personalize-events/2018-03-22/
