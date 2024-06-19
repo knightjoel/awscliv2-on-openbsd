@@ -1,6 +1,6 @@
 COMMENT =		Python bindings for the AWS Common Runtime
 
-MODPY_EGG_VERSION =	0.20.11
+MODPY_EGG_VERSION =	0.20.2
 DISTNAME =		awscrt-${MODPY_EGG_VERSION}
 PKGNAME =		py-awscrt-${MODPY_EGG_VERSION}
 
