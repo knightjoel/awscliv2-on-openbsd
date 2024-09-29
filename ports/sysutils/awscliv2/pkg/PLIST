@@ -935,6 +935,12 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/drs/2020-02-26/end
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/drs/2020-02-26/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/drs/2020-02-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds-data/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds-data/2023-05-31/
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds-data/2023-05-31/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds-data/2023-05-31/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds-data/2023-05-31/paginators-1.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds-data/2023-05-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds/2015-04-16/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds/2015-04-16/completions-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/ds/2015-04-16/endpoint-rule-set-1.json
@@ -1166,6 +1172,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/glue/2017-03-31/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/glue/2017-03-31/completions-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/glue/2017-03-31/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/glue/2017-03-31/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/glue/2017-03-31/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/glue/2017-03-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/grafana/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/grafana/2020-08-18/
@@ -2449,11 +2456,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/workdocs/2016-05-0
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/workdocs/2016-05-01/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/workdocs/2016-05-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/workdocs/2016-05-01/service-2.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/worklink/
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/worklink/2018-09-25/
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/worklink/2018-09-25/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/worklink/2018-09-25/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/worklink/2018-09-25/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/workmail/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/workmail/2017-10-01/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/workmail/2017-10-01/completions-1.json
