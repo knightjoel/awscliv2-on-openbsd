@@ -11,7 +11,7 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 45
   OBSD_MIRROR: https://cdn.openbsd.org
-  PKG_DEPS_GENERAL: cmake ninja python%3.10
+  PKG_DEPS_GENERAL: cmake ninja python%3
   PKG_DEPS_CLI: |
     py3-build py3-installer py3-flit_core py3-wheel py3-setuptools py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
 
@@ -28,14 +28,14 @@ jobs:
             arch: arm64
             version: "7.5"
             host: ubuntu-latest
-          - name: 7.4-amd64
+          - name: 7.6-amd64
             arch: x86-64
-            version: "7.4"
+            version: "7.6"
             host: ubuntu-latest
             do-git-push: true  # Push changes from this build back to the branch
-          - name: 7.4-arm64
+          - name: 7.6-arm64
             arch: arm64
-            version: "7.4"
+            version: "7.6"
             host: ubuntu-latest
     name: Build and sync on ${{ matrix.os.name }}
     runs-on: ${{ matrix.os.host }}
@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build
-        uses: cross-platform-actions/action@v0.24.0
+        uses: cross-platform-actions/action@master
         with:
           operating_system: openbsd
           architecture: ${{ matrix.os.arch }}
