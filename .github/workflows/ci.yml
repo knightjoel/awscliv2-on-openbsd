@@ -61,11 +61,13 @@ jobs:
             # Extract ports outside the 'work' directory so that it does not get
             # sync'd back to the runner at the end of this job.
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.os.version }}/ports.tar.gz | tar zxphf - -C $HOME
-            echo cvs up ports ...
+            echo cvs up ...
             ssh-keyscan ${{ env.OBSD_CVS_MIRROR }} >> ~/.ssh/known_hosts
             cd $PORTSDIR
             export CVS_RSH="ssh"
-            cvs -d anoncvs@${{ env.OBSD_CVS_MIRROR }}:/cvs up
+            # OpenBSD 7.6 ports.tar.gz is missing a number of directories from the
+            # ports tree. Importantly for this project, lang/python/3 is missing.
+            cvs -d anoncvs@${{ env.OBSD_CVS_MIRROR }}:/cvs up lang/python
             cd ~
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
