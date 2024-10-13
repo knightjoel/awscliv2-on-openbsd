@@ -63,8 +63,6 @@ jobs:
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
             sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
-            cd $PORTSDIR/security/py-aes
-            make install
             cd $PORTSDIR/devel/py-awscrt
             make makesum
             make update-plist
