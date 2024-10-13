@@ -44,6 +44,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: cvs
+          version: 1
       - name: Build
         uses: cross-platform-actions/action@master
         with:
@@ -54,12 +58,16 @@ jobs:
           shell: bash
           shutdown_vm: false
           run: |
+            export PORTSDIR=$HOME/ports
             sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             echo Extracting ports.tar.gz ...
             # Extract ports outside the 'work' directory so that it does not get
             # sync'd back to the runner at the end of this job.
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.os.version }}/ports.tar.gz | tar zxphf - -C $HOME
-            export PORTSDIR=$HOME/ports
+            echo cvs up ports ...
+            cd $PORTSDIR
+            cvs -d anoncvs@anoncvs1.usa.openbsd.org:/cvs up
+            cd ~
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
             sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
