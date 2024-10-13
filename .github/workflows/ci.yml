@@ -11,7 +11,7 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 45
   OBSD_MIRROR: https://cdn.openbsd.org
-  OBSD_CVS_MIRROR: anoncvs@anoncvs1.usa.openbsd.org:/cvs
+  OBSD_CVS_MIRROR: anoncvs1.usa.openbsd.org
   PKG_DEPS_GENERAL: cmake ninja python%3
   PKG_DEPS_CLI: |
     py3-build py3-installer py3-flit_core py3-wheel py3-setuptools py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
@@ -62,12 +62,10 @@ jobs:
             # sync'd back to the runner at the end of this job.
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.os.version }}/ports.tar.gz | tar zxphf - -C $HOME
             echo cvs up ports ...
-            set -x
             ssh-keyscan ${{ env.OBSD_CVS_MIRROR }}
             cd $PORTSDIR
             export CVS_RSH="ssh"
-            cvs -v
-            cvs -d ${{ env.OBSD_CVS_MIRROR }} up
+            cvs -d anoncvs@${{ env.OBSD_CVS_MIRROR }}:/cvs up
             cd ~
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
