@@ -11,7 +11,7 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 45
   OBSD_MIRROR: https://cdn.openbsd.org
-  OBSD_CVS_MIRROR: 'anoncvs@anoncvs1.usa.openbsd.org:/cvs'
+  OBSD_CVS_MIRROR: "anoncvs@anoncvs1.usa.openbsd.org:/cvs"
   PKG_DEPS_GENERAL: cmake ninja python%3
   PKG_DEPS_CLI: |
     py3-build py3-installer py3-flit_core py3-wheel py3-setuptools py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
