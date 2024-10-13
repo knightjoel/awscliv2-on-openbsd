@@ -1,4 +1,4 @@
-@so lib/python${MODPY_VERSION}/site-packages/_awscrt.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/_awscrt${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/awscrt/
 lib/python${MODPY_VERSION}/site-packages/awscrt-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/awscrt-${MODPY_EGG_VERSION}.dist-info/LICENSE
