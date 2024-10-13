@@ -44,10 +44,6 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: cvs
-          version: 1
       - name: Build
         uses: cross-platform-actions/action@master
         with:
