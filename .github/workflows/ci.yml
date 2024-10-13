@@ -64,6 +64,7 @@ jobs:
             echo cvs up ports ...
             ssh-keyscan ${{ env.OBSD_CVS_MIRROR }}
             cd $PORTSDIR
+            export CVS_RSH="ssh"
             cvs -d ${{ env.OBSD_CVS_MIRROR }} up
             cd ~
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
