@@ -62,7 +62,7 @@ jobs:
             # sync'd back to the runner at the end of this job.
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.os.version }}/ports.tar.gz | tar zxphf - -C $HOME
             echo cvs up ports ...
-            ssh-keyscan ${{ env.OBSD_CVS_MIRROR }}
+            ssh-keyscan ${{ env.OBSD_CVS_MIRROR }} >> ~/.ssh/known_hosts
             cd $PORTSDIR
             export CVS_RSH="ssh"
             cvs -d anoncvs@${{ env.OBSD_CVS_MIRROR }}:/cvs up
