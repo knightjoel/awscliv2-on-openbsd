@@ -11,7 +11,8 @@ on:
 env:
   ARTIFACT_RETENTION_DAYS: 45
   OBSD_MIRROR: https://cdn.openbsd.org
-  PKG_DEPS_GENERAL: cmake ninja python%3.10
+  OBSD_CVS_MIRROR: anoncvs1.usa.openbsd.org
+  PKG_DEPS_GENERAL: cmake ninja python%3
   PKG_DEPS_CLI: |
     py3-build py3-installer py3-flit_core py3-wheel py3-setuptools py3-colorama py3-docutils py3-cryptography py3-ruamel.yaml py3-ruamel.yaml.clib py3-prompt_toolkit py3-distro py3-dateutil py3-jmespath py3-urllib3
 
@@ -28,14 +29,14 @@ jobs:
             arch: arm64
             version: "7.5"
             host: ubuntu-latest
-          - name: 7.4-amd64
+          - name: 7.6-amd64
             arch: x86-64
-            version: "7.4"
+            version: "7.6"
             host: ubuntu-latest
             do-git-push: true  # Push changes from this build back to the branch
-          - name: 7.4-arm64
+          - name: 7.6-arm64
             arch: arm64
-            version: "7.4"
+            version: "7.6"
             host: ubuntu-latest
     name: Build and sync on ${{ matrix.os.name }}
     runs-on: ${{ matrix.os.host }}
@@ -45,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build
-        uses: cross-platform-actions/action@v0.24.0
+        uses: cross-platform-actions/action@master
         with:
           operating_system: openbsd
           architecture: ${{ matrix.os.arch }}
@@ -54,12 +55,20 @@ jobs:
           shell: bash
           shutdown_vm: false
           run: |
+            export PORTSDIR=$HOME/ports
             sudo pkg_add -Iv ${{ env.PKG_DEPS_GENERAL }} ${{ env.PKG_DEPS_CLI }}
             echo Extracting ports.tar.gz ...
             # Extract ports outside the 'work' directory so that it does not get
             # sync'd back to the runner at the end of this job.
             ftp -ao - -V -M ${{ env.OBSD_MIRROR }}/pub/OpenBSD/${{ matrix.os.version }}/ports.tar.gz | tar zxphf - -C $HOME
-            export PORTSDIR=$HOME/ports
+            echo cvs up ...
+            ssh-keyscan ${{ env.OBSD_CVS_MIRROR }} >> ~/.ssh/known_hosts
+            cd $PORTSDIR
+            export CVS_RSH="ssh"
+            # OpenBSD 7.6 ports.tar.gz is missing a number of directories from the
+            # ports tree. Importantly for this project, lang/python/3 is missing.
+            cvs -d anoncvs@${{ env.OBSD_CVS_MIRROR }}:/cvs up lang/python
+            cd ~
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
             sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
