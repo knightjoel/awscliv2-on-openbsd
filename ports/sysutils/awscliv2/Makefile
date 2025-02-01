@@ -30,6 +30,7 @@ RUN_DEPENDS +=		sysutils/py-distro${MODPY_FLAVOR}
 RUN_DEPENDS +=		devel/py-dateutil${MODPY_FLAVOR}
 RUN_DEPENDS +=		devel/py-jmespath${MODPY_FLAVOR}
 RUN_DEPENDS +=		www/py-urllib3${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-zipp${MODPY_FLAVOR}
 BUILD_DEPENDS += 	${RUN_DEPENDS}
 
 NO_TEST =		Yes
