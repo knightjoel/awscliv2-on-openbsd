@@ -19,7 +19,7 @@ MODULES =		lang/python
 
 MODPY_PYBUILD =		flit_core
 
-RUN_DEPENDS +=		devel/py-awscrt==0.23.8
+RUN_DEPENDS +=		devel/py-awscrt=0.23.8
 RUN_DEPENDS +=		devel/py-colorama${MODPY_FLAVOR}
 RUN_DEPENDS +=		textproc/py-docutils${MODPY_FLAVOR}
 RUN_DEPENDS +=		security/py-cryptography${MODPY_FLAVOR}
