@@ -1,6 +1,7 @@
 COMMENT =		universal command line environment v2 for AWS
 
 MODPY_DISTV =		2.24.20
+PKGNAME =		awscli-${MODPY_DISTV}
 
 GH_ACCOUNT =		aws
 GH_PROJECT =		aws-cli
