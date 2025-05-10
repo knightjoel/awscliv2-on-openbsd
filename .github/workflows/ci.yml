@@ -21,22 +21,22 @@ jobs:
     strategy:
       matrix:
         os:
-          - name: 7.5-amd64
-            arch: x86-64
-            version: "7.5"
-            host: ubuntu-latest
-          - name: 7.5-arm64
-            arch: arm64
-            version: "7.5"
-            host: ubuntu-latest
           - name: 7.6-amd64
             arch: x86-64
             version: "7.6"
             host: ubuntu-latest
-            do-git-push: true  # Push changes from this build back to the branch
           - name: 7.6-arm64
             arch: arm64
             version: "7.6"
+            host: ubuntu-latest
+          - name: 7.7-amd64
+            arch: x86-64
+            version: "7.7"
+            host: ubuntu-latest
+            do-git-push: true  # Push changes from this build back to the branch
+          - name: 7.7-arm64
+            arch: arm64
+            version: "7.7"
             host: ubuntu-latest
     name: Build and sync on ${{ matrix.os.name }}
     runs-on: ${{ matrix.os.host }}
