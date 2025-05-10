@@ -1,8 +1,7 @@
 COMMENT =		Python bindings for the AWS Common Runtime
 
-MODPY_EGG_VERSION =	0.23.8
-DISTNAME =		awscrt-${MODPY_EGG_VERSION}
-PKGNAME =		py-awscrt-${MODPY_EGG_VERSION}
+MODPY_DISTV =		0.23.8
+DISTNAME =		awscrt-${MODPY_DISTV}
 
 CATEGORIES =		devel
 
@@ -14,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		pthread
 
-MODULES =		lang/python \
-			devel/cmake
+MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
@@ -23,7 +21,7 @@ MODPY_PYBUILD =		setuptools
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS +=	devel/cmake
+BUILD_DEPENDS +=	devel/cmake/core
 
 # aws-lc <https://github.com/aws/aws-lc>, which is vendored into the
 # Python CRT bindings, isn't compatible with exec-only.

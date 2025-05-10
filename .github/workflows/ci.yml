@@ -21,14 +21,6 @@ jobs:
     strategy:
       matrix:
         os:
-          - name: 7.6-amd64
-            arch: x86-64
-            version: "7.6"
-            host: ubuntu-latest
-          - name: 7.6-arm64
-            arch: arm64
-            version: "7.6"
-            host: ubuntu-latest
           - name: 7.7-amd64
             arch: x86-64
             version: "7.7"
