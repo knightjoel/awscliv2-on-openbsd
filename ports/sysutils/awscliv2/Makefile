@@ -1,11 +1,11 @@
 COMMENT =		universal command line environment v2 for AWS
 
-MODPY_EGG_VERSION =	2.24.20
-PKGNAME =		awscli-${MODPY_EGG_VERSION}
+MODPY_DISTV =		2.24.20
+PKGNAME =		awscli-${MODPY_DISTV}
 
 GH_ACCOUNT =		aws
 GH_PROJECT =		aws-cli
-GH_TAGNAME =		${MODPY_EGG_VERSION}
+GH_TAGNAME =		${MODPY_DISTV}
 
 CATEGORIES =		sysutils
 
