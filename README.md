@@ -59,5 +59,5 @@ make install
 
 ```text
 % aws --version
-aws-cli/2.27.12 Python/3.12.9 OpenBSD/7.7 source/amd64
+aws-cli/2.28.4 Python/3.12.11 OpenBSD/7.7 source/amd64
 ```

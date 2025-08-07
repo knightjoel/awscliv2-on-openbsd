@@ -15,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}_test.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}cbor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}cbor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}checksums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}checksums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -31,12 +33,15 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt5.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt_request_response.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}mqtt_request_response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/_test.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/auth.py
+lib/python${MODPY_VERSION}/site-packages/awscrt/cbor.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/checksums.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/common.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/crypto.py
@@ -53,5 +58,6 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/http.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/io.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/mqtt.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/mqtt5.py
+lib/python${MODPY_VERSION}/site-packages/awscrt/mqtt_request_response.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/s3.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/websocket.py
