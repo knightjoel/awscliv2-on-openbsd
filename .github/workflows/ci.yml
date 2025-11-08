@@ -70,6 +70,8 @@ jobs:
             cvs -d anoncvs@${{ env.OBSD_CVS_MIRROR }}:/cvs up lang/python
             cd ~
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
+            # Get the official port out of the way
+            rm -f $PORTSDIR/devel/py-awscrt
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
             sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
             cd $PORTSDIR/devel/py-awscrt
