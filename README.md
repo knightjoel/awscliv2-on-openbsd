@@ -7,8 +7,16 @@ This repo contains code which will allow you to build and install the
 For more information, read the blog post
 [AWS CLIv2 on OpenBSD](https://www.packetmischief.ca/2023/08/16/awscliv2-on-openbsd/).
 
-The ports in this repo are tested on OpenBSD 7.7 using the amd64 and arm64
-architectures.
+Since OpenBSD 7.8, the AWS CLIv2 can be installed directly from OpenBSD ports
+via `pkg_add`:
+
+```text
+pkg_add awscli%v2 py3-awscrt
+```
+
+The ports in this repo are tested on OpenBSD 7.7 and 7.8 using the amd64 and arm64
+architectures. The version of the AWS CLI in this repo may be newer than what's in
+the OpenBSD ports system.
 
 An older version of this code is supported on OpenBSD 7.6. Changes in ports
 infrastructure and AWS CLI dependencies make the latest version of this code
@@ -59,5 +67,5 @@ make install
 
 ```text
 % aws --version
-aws-cli/2.28.4 Python/3.12.11 OpenBSD/7.7 source/amd64
+aws-cli/2.28.4 Python/3.12.11 OpenBSD/7.8 source/amd64
 ```
