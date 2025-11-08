@@ -21,11 +21,19 @@ jobs:
     strategy:
       matrix:
         os:
+          - name: 7.8-amd64
+            arch: x86-64
+            version: "7.8"
+            host: ubuntu-latest
+            do-git-push: true  # Push changes from this build back to the branch
+          - name: 7.8-arm64
+            arch: arm64
+            version: "7.8"
+            host: ubuntu-latest
           - name: 7.7-amd64
             arch: x86-64
             version: "7.7"
             host: ubuntu-latest
-            do-git-push: true  # Push changes from this build back to the branch
           - name: 7.7-arm64
             arch: arm64
             version: "7.7"
@@ -62,6 +70,8 @@ jobs:
             cvs -d anoncvs@${{ env.OBSD_CVS_MIRROR }}:/cvs up lang/python
             cd ~
             mv $GITHUB_WORKSPACE/ports/sysutils/awscliv2 $PORTSDIR/sysutils
+            # Get the official port out of the way
+            rm -rf $PORTSDIR/devel/py-awscrt
             mv $GITHUB_WORKSPACE/ports/devel/py-awscrt $PORTSDIR/devel
             sudo sh -c 'echo SUDO=sudo -E >> /etc/mk.conf'
             cd $PORTSDIR/devel/py-awscrt
