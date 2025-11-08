@@ -26,7 +26,7 @@ Index: pyproject.toml
 -    "distro>=1.5.0,<1.9.0",
 +    "prompt-toolkit",
 +    "distro",
-     "awscrt==0.27.5",
+     "awscrt==0.28.4",
 -    "python-dateutil>=2.1,<=2.9.0",
 -    "jmespath>=0.7.1,<1.1.0",
 +    "python-dateutil",
