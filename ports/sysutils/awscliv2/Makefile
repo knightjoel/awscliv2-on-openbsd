@@ -16,7 +16,6 @@ MAINTAINER =		Joel Knight <knight.joel@gmail.com>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
 MODPY_PYBUILD =		flit_core
 
 RUN_DEPENDS +=		devel/py-awscrt=0.28.4
