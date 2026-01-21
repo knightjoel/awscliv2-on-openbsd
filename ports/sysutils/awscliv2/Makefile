@@ -1,6 +1,6 @@
 COMMENT =		universal command line environment v2 for AWS
 
-MODPY_DISTV =		2.32.24
+MODPY_DISTV =		2.33.2
 PKGNAME =		awscli-${MODPY_DISTV}
 
 GH_ACCOUNT =		aws
