@@ -1,12 +1,11 @@
 name: CI
 
 on:
-  push:
-    branches-ignore:
-      - main
+  pull_request:
     paths:
       - '.github/workflows/*'
       - 'ports/**'
+  workflow_dispatch:
 
 env:
   ARTIFACT_RETENTION_DAYS: 45
