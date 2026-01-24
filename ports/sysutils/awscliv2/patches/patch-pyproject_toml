@@ -32,6 +32,6 @@ Index: pyproject.toml
 -    "jmespath>=0.7.1,<1.1.0",
 +    "python-dateutil",
 +    "jmespath",
-     "urllib3>=1.25.4,<1.27",
+     "urllib3>=1.25.4,<=2.6.3",
+     "wcwidth<0.3.0",
  ]
- dynamic = ["version"]
