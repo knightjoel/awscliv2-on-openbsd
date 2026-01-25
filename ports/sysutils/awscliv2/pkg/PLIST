@@ -952,6 +952,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/datazone/2018-05-1
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/datazone/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/datazone/2018-05-10/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/datazone/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/datazone/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/dax/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/dax/2017-04-19/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/dax/2017-04-19/completions-1.json
@@ -1128,13 +1129,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elasticbeanstalk/2
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elasticbeanstalk/2010-12-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elasticbeanstalk/2010-12-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elasticbeanstalk/2010-12-01/waiters-2.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elastictranscoder/
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elastictranscoder/2012-09-25/
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elastictranscoder/2012-09-25/completions-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elastictranscoder/2012-09-25/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elastictranscoder/2012-09-25/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elastictranscoder/2012-09-25/service-2.json
-lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elastictranscoder/2012-09-25/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elb/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elb/2012-06-01/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/elb/2012-06-01/completions-1.json
@@ -1587,6 +1581,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/launch-wizard/2018
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/launch-wizard/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/launch-wizard/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/launch-wizard/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/launch-wizard/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/lex-models/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/lex-models/2017-04-19/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/lex-models/2017-04-19/completions-1.json
@@ -2603,6 +2598,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transcribe/2017-10
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transcribe/2017-10-26/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transcribe/2017-10-26/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transcribe/2017-10-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transcribe/2017-10-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transfer/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transfer/2018-11-05/
 lib/python${MODPY_VERSION}/site-packages/awscli/botocore/data/transfer/2018-11-05/endpoint-rule-set-1.json
@@ -3552,6 +3548,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/$
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}exacttimestamps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}exacttimestamps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}nooverwrite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}nooverwrite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}register.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}register.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/${MODPY_PYCACHE}sizeonly.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3560,6 +3558,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/b
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/caseconflict.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/delete.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/exacttimestamps.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/nooverwrite.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/register.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/syncstrategy/sizeonly.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/transferconfig.py
@@ -3842,6 +3841,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-rest-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-stage.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage-plan.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-usage.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/update-vpc-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewaymanagementapi/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewaymanagementapi/delete-connection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigatewaymanagementapi/get-connection.rst
@@ -6222,23 +6222,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticbeanstalk/update
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticbeanstalk/update-configuration-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticbeanstalk/update-environment.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticbeanstalk/validate-configuration-settings.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/cancel-job.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/create-job.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/create-pipeline.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/create-preset.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/delete-pipeline.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/delete-preset.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/list-jobs-by-pipeline.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/list-jobs-by-status.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/list-pipelines.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/list-presets.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/read-job.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/read-pipeline.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/read-preset.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/update-pipeline-notifications.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/update-pipeline-status.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/elastictranscoder/update-pipeline.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/add-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elb/apply-security-groups-to-load-balancer.rst
@@ -6668,6 +6651,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-findings
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-invitations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-ip-sets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/list-members.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/update-detector.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/guardduty/update-ip-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/health/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/health/describe-affected-entities.rst
