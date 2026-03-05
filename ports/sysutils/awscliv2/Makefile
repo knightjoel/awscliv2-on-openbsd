@@ -1,6 +1,6 @@
 COMMENT =		universal command line environment v2 for AWS
 
-MODPY_DISTV =		2.33.6
+MODPY_DISTV =		2.34.2
 PKGNAME =		awscli-${MODPY_DISTV}
 
 GH_ACCOUNT =		aws
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		flit_core
 
-RUN_DEPENDS +=		devel/py-awscrt=0.29.1
+RUN_DEPENDS +=		devel/py-awscrt=0.31.2
 RUN_DEPENDS +=		devel/py-colorama${MODPY_FLAVOR}
 RUN_DEPENDS +=		textproc/py-docutils${MODPY_FLAVOR}
 RUN_DEPENDS +=		security/py-cryptography${MODPY_FLAVOR}
