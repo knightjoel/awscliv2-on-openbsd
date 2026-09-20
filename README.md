@@ -9,10 +9,18 @@ For more information, read the blog post
 
 > [!TIP]
 > Since OpenBSD 7.8, the AWS CLIv2 can be installed directly from OpenBSD ports
-> via `pkg_add`:
+> via `pkg_add`.
+>
+> On OpenBSD 7.8 - 7.9:
 >
 >```text
 >pkg_add awscli%v2 py3-awscrt
+>```
+>
+> On OpenBSD 8.0+:
+>
+>```text
+>pkg_add awscli py3-awscrt
 >```
 
 The ports in this repo are tested on OpenBSD 7.7 and 7.8 using the amd64 and arm64

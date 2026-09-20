@@ -1,15 +1,15 @@
-COMMENT =		universal command line environment v2 for AWS
+COMMENT =		universal command line environment for AWS
 
-MODPY_DISTV =		2.34.2
-PKGNAME =		awscli-${MODPY_DISTV}
-
+MODPY_DISTV =		2.36.49
 GH_ACCOUNT =		aws
 GH_PROJECT =		aws-cli
 GH_TAGNAME =		${MODPY_DISTV}
+DISTNAME =		awscli-${MODPY_DISTV}
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://aws.amazon.com/cli/
+
 MAINTAINER =		Joel Knight <knight.joel@gmail.com>
 
 # Apache 2.0
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		flit_core
 
-RUN_DEPENDS +=		devel/py-awscrt=0.31.2
+RUN_DEPENDS +=		devel/py-awscrt=0.36.4
 RUN_DEPENDS +=		devel/py-colorama${MODPY_FLAVOR}
 RUN_DEPENDS +=		textproc/py-docutils${MODPY_FLAVOR}
 RUN_DEPENDS +=		security/py-cryptography${MODPY_FLAVOR}
