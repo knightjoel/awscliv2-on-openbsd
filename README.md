@@ -23,7 +23,7 @@ For more information, read the blog post
 >pkg_add awscli py3-awscrt
 >```
 
-The ports in this repo are tested on OpenBSD 7.8 and 7.9 using the amd64 and arm64
+The ports in this repo are tested on OpenBSD 7.9 and 8.0 using the amd64 and arm64
 architectures. The version of the AWS CLI in this repo may be newer than what's in
 the OpenBSD ports system.
 
@@ -69,5 +69,5 @@ make install
 
 ```text
 % aws --version
-aws-cli/2.36.49 Python/3.13.14 OpenBSD/7.9 source/amd64
+aws-cli/2.36.49 Python/3.14.7 OpenBSD/8.0 source/amd64
 ```
