@@ -20,19 +20,19 @@ jobs:
     strategy:
       matrix:
         os:
-          - name: 7.8-amd64
+          - name: 8.0-amd64
             arch: x86-64
-            version: "7.8"
+            version: "8.0"
             host: ubuntu-latest
-          - name: 7.8-arm64
+            do-git-push: true  # Push changes from this build back to the branch
+          - name: 8.0-arm64
             arch: arm64
-            version: "7.8"
+            version: "8.0"
             host: ubuntu-latest
           - name: 7.9-amd64
             arch: x86-64
             version: "7.9"
             host: ubuntu-latest
-            do-git-push: true  # Push changes from this build back to the branch
           - name: 7.9-arm64
             arch: arm64
             version: "7.9"
